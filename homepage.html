@@ -8,13 +8,166 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to My Website</h1>
+        <h1>Investment Calculator</h1>
+        <nav>
+            <ul>
+                <li><a href="HTMLPage1.html">Home</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="calculatorPage1.html">Investment Calculator</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <h2>About Me</h2>
-        <p>Hello! I am a web developer learning CSS. This is a simple example to demonstrate basic CSS styling.</p>
-        <p>Feel free to <a href="#">contact me</a> if you have any questions.</p>
-        <button>Click Me</button>
+        <section id="news">
+            <h2>Latest Investment News</h2>
+            <article>
+                <h3>Understanding Market Trends</h3>
+
+                <h3>Types of Market Trends</h3>
+                <ul>
+                    <li><strong>Bull Markets (Upward Trends):</strong> These are periods when asset prices are rising. Investors experience optimism, confidence, and have positive expectations about future growth. An upward trend can last from several weeks to several years.</li>
+                    <li><strong>Bear Markets (Downward Trends):</strong> These are periods when asset prices are falling. They are often associated with market pessimism and expectations of further price declines. A downward trend can also last from several weeks to several years.</li>
+                    <li><strong>Sideways Trends:</strong> In these conditions, the market shows no significant movement up or down, and asset prices fluctuate within a narrow range. This may indicate uncertainty or a balance between buyers and sellers.</li>
+                </ul>
+
+                <h3>How to Identify Market Trends</h3>
+                <p>Identifying market trends can be accomplished using various analytical tools and techniques, including:</p>
+                <ul>
+                    <li><strong>Technical Analysis:</strong> Using price charts and various technical indicators such as moving averages, the Relative Strength Index (RSI), and MACD can help identify and confirm trends.</li>
+                    <li><strong>Fundamental Analysis:</strong> Analyzing economic indicators, corporate reports, and news can provide insights into the factors influencing market trends.</li>
+                    <li><strong>Market Sentiment:</strong> Studying the sentiments of market participants can also provide valuable clues about potential market movements.</li>
+                </ul>
+
+                <h3>The Importance of Understanding Market Trends</h3>
+                <p>Understanding market trends is crucial for developing effective investment strategies. It allows investors to make informed decisions about buying, selling, or holding assets based on the current and projected market conditions. Investors who best understand these trends generally achieve better results by optimizing their portfolios to align with current market conditions.</p>
+
+                <p>In conclusion, understanding market trends is key to successful investing. Investors equipped with knowledge of how trends impact the market can better protect their investments from potential losses and maximize their chances of profit.</p>
+
+                <div class="row" style="margin-left: 200px">
+                    <div class="column">
+                        <img src="https://www.livemint.com/lm-img/img/2023/11/23/600x338/Lead_ICICI_1_1700727781280_1700727789163.JPG" onclick="openModal();currentSlide(1)" class="hover-shadow">
+                    </div>
+                    <div class="column">
+                        <img src="https://www.livemint.com/lm-img/img/2023/11/23/600x338/Lead_ICICI_1_1700727781280_1700727789163.JPG" onclick="openModal();currentSlide(2)" class="hover-shadow">
+                    </div>
+                    <div class="column">
+                        <img src="https://www.livemint.com/lm-img/img/2023/11/23/600x338/Lead_ICICI_1_1700727781280_1700727789163.JPG" onclick="openModal();currentSlide(3)" class="hover-shadow">
+                    </div>
+
+                </div>
+
+                <!-- The Modal/Lightbox -->
+                <div id="myModal" class="modal">
+                    <span class="close cursor" onclick="closeModal()">&times;</span>
+                    <div class="modal-content">
+
+                        <div class="mySlides">
+                            <div class="numbertext">1 / 4</div>
+                            <img src="https://www.livemint.com/lm-img/img/2023/11/23/600x338/Lead_ICICI_1_1700727781280_1700727789163.JPG" style="width:20%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">2 / 4</div>
+                            <img src="https://www.livemint.com/lm-img/img/2023/11/23/600x338/Lead_ICICI_1_1700727781280_1700727789163.JPG" style="width: 20%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">3 / 4</div>
+                            <img src="https://www.livemint.com/lm-img/img/2023/11/23/600x338/Lead_ICICI_1_1700727781280_1700727789163.JPG" style="width: 20%">
+                        </div>
+
+
+
+                        <!-- Next/previous controls -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                        <!-- Caption text -->
+                        <div class="caption-container">
+                            <p id="caption"></p>
+                        </div>
+
+                        <!-- Thumbnail image controls -->
+                        <div class="column">
+                            <img class="demo" src="img1.jpg" onclick="currentSlide(1)" alt="Nature">
+                        </div>
+
+                        <div class="column">
+                            <img class="demo" src="img2.jpg" onclick="currentSlide(2)" alt="Snow">
+                        </div>
+
+                        <div class="column">
+                            <img class="demo" src="img3.jpg" onclick="currentSlide(3)" alt="Mountains">
+                        </div>
+
+
+                    </div>
+
+
+
+
+                    <script>
+                        // Open the Modal
+                        function openModal() {
+                            document.getElementById("myModal").style.display = "block";
+                        }
+
+                        // Close the Modal
+                        function closeModal() {
+                            document.getElementById("myModal").style.display = "none";
+                        }
+
+                        var slideIndex = 1;
+                        showSlides(slideIndex);
+
+                        // Next/previous controls
+                        function plusSlides(n) {
+                            showSlides(slideIndex += n);
+                        }
+
+                        // Thumbnail image controls
+                        function currentSlide(n) {
+                            showSlides(slideIndex = n);
+                        }
+
+                        function showSlides(n) {
+                            var i;
+                            var slides = document.getElementsByClassName("mySlides");
+                            var dots = document.getElementsByClassName("demo");
+                            var captionText = document.getElementById("caption");
+                            if (n > slides.length) { slideIndex = 1 }
+                            if (n < 1) { slideIndex = slides.length }
+                            for (i = 0; i < slides.length; i++) {
+                                slides[i].style.display = "none";
+                            }
+                            for (i = 0; i < dots.length; i++) {
+                                dots[i].className = dots[i].className.replace(" active", "");
+                            }
+                            slides[slideIndex - 1].style.display = "block";
+                            dots[slideIndex - 1].className += " active";
+                            captionText.innerHTML = dots[slideIndex - 1].alt;
+                        }
+                    </script>
+
+                    <p>Stay updated with the latest trends in the investment market. Learn how market dynamics could affect your investments.</p>
+            </article>
+            <article>
+                <h3>Investment Strategies for 2024</h3>
+                <img src="https://www.moneyweb.co.za/wp-content/uploads/2014/07/shutterstock_195219920-Large-500x281.jpg" style="margin-left: 600px" alt="Investment Strategies">
+                <p>Investment strategies for 2024 must consider changes in the economic environment, technology, and global politics that may affect the markets. In an era of uncertainty and rapid change, a flexible and well-thought-out investment approach can help investors maximize returns and minimize risks. Here are some key strategies to consider:</p>
+                <ul>
+                    <li><strong>Portfolio Diversification:</strong> More than ever, diversification remains a critical component of a successful investment strategy. Spreading investments across different asset classes and geographic regions can help reduce risk and protect the portfolio from the volatility of a single market.</li>
+                    <li><strong>Focus on Sustainability:</strong> Investing in companies that demonstrate sustainable practices and approaches is likely to be successful in the long term. This includes companies with strong corporate governance, social responsibility, and clean technologies.</li>
+                    <li><strong>Technological Investments:</strong> The technology sector continues to be promising due to innovations in areas such as artificial intelligence, robotics, cloud computing, and biotechnology. Investing in technology companies that are at the forefront of these changes can provide significant growth.</li>
+                    <li><strong>Attention to Emerging Markets:</strong> Emerging markets such as China, India, and Brazil offer significant growth opportunities. While these markets pose a greater degree of risk due to political and economic instability, they also offer the potential for high returns for well-informed investors.</li>
+                    <li><strong>Defensive Strategies:</strong> In times of economic uncertainty, defensive strategies such as investing in gold or bonds can help preserve capital and reduce portfolio volatility.</li>
+                </ul>
+            </article>
+        </section>
+       
     </main>
+    <footer>
+        <p>&copy; 2024 Investment Calculator</p>
+    </footer>
 </body>
 </html>
