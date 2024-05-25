@@ -40,6 +40,7 @@ nav ul {
 main {
     padding: 20px;
     background: #f4f4f4;
+    flex: 1;
 }
 
 article {
@@ -123,39 +124,45 @@ footer {
     }
 
 
-.mySlides {
-    display: none;
-}
-
-
-.prev,
-.next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -50px;
-    color: white;
-    font-weight: bold;
-    font-size: 40px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    -webkit-user-select: none;
-}
-
-
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-    
-    .prev:hover,
-    .next:hover {
-        background-color: rgba(0, 0, 0, 0.8);
+    .slideshow-container {
+        max-width: 900px;
+        position: relative;
+        margin: auto;
     }
+
+    .mySlides {
+        display: none;
+        width: 80%;
+        border-radius: 8px;
+    }
+
+
+   
+
+    .prev, .next {
+       
+        cursor: pointer;
+        position: absolute;
+        top: 40%;
+        width: -900px;
+        margin-top: -20px;
+        padding: 40px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+
+    .next {
+        right: 0;
+        border-radius: 2px 0 0 2px;
+    }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
 
 
 
@@ -190,4 +197,24 @@ img.hover-shadow {
 
 .hover-shadow:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#results, #chart-container {
+    margin-top: 20px;
 }
