@@ -50,5 +50,79 @@
     </footer>
 
 
+    <script>
+        function calculateInvestment() {
+            const euroToUSD = 1.08; // Example conversion rate
+            let startDate = new Date(document.getElementById('startDate').value);
+            let initialAmount = parseFloat(document.getElementById('initialAmount').value);
+            let interestRate = parseFloat(document.getElementById('interestRate').value) / 100;
+            let inflationRate = parseFloat(document.getElementById('inflationRate').value) / 100;
+            let years = parseInt(document.getElementById('years').value);
+            let amountsEUR = [];
+            let amountsUSD = [];
+            let yearLabels = [];
+            let startYear = startDate.getFullYear();
+            let startMonth = startDate.getMonth() + 1;
+
+            for (let i = 0; i <= years; i++) {
+                let year = startYear + i;
+                let months = startMonth + i * 12 - 1;
+                let adjustedRate = (1 + interestRate) / (1 + inflationRate) - 1;
+                let futureValueEUR = initialAmount * Math.pow(1 + adjustedRate, i);
+                let futureValueUSD = futureValueEUR * euroToUSD;
+                amountsEUR.push(futureValueEUR);
+                amountsUSD.push(futureValueUSD);
+                yearLabels.push(`${year} (${months} months)`);
+            }
+
+            document.getElementById('results').innerHTML = createResultsTable(yearLabels, amountsEUR, amountsUSD);
+            renderChart(yearLabels, amountsEUR, amountsUSD);
+        }
+
+        function createResultsTable(labels, valuesEUR, valuesUSD) {
+            let table = '<table><tr><th>Year (Month)</th><th>Balance (€)</th><th>Balance ($)</th></tr>';
+            labels.forEach((label, index) => {
+                table += `<tr><td>${label}</td><td>${valuesEUR[index].toFixed(2)} €</td><td>${valuesUSD[index].toFixed(2)} $</td></tr>`;
+            });
+            table += '</table>';
+            return table;
+        }
+
+        function renderChart(labels, dataEUR, dataUSD) {
+            const ctx = document.getElementById('investmentChart').getContext('2d');
+            if (window.barChart !== undefined) {
+                window.barChart.destroy();
+            }
+            window.barChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Forecast Balance (€)',
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        data: dataEUR,
+                        borderWidth: 1
+                    }, {
+                        label: 'Forecast Balance ($)',
+                        backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                        borderColor: 'rgba(255, 159, 64, 1)',
+                        data: dataUSD,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+        }
+    </script>
+
     </body>
     </html>
