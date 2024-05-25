@@ -19,9 +19,9 @@ link rel="stylesheet" href="my.css"
 </nav>
 <h1>Investment Calculator</h1>
 </header>
-<div class="content"
+<div class="content">
 
-<h2>About us</h2>
+<h2> About us</h2>
 
 <p>Welcome to Investment Calculator, a pioneering platform dedicated to empowering young investors through innovative financial tools and insightful educational resources. Our mission is to simplify the complex world of investing, making it accessible and understandable for everyone, regardless of their background or experience level.</p>
 <p>Founded by a team of passionate financial experts and technologists, Investment Calculator is committed to providing up-to-date, accurate, and actionable information to help you navigate the often intimidating landscape of stocks, bonds, and other investment opportunities. Whether you are a beginner looking to make your first investment or an experienced investor seeking to optimize your portfolio, our tools are designed to assist you in making informed decisions that align with your financial goals.</p>
@@ -41,7 +41,32 @@ link rel="stylesheet" href="my.css"
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn84uTiwiQmxpKravxlAQikIuMHvrvCW3b4w&s" style="width:100%">
     </div>
      
-    
+    <a class="prev" onclick="plusSlides(-1)" style="margin-left: -550px" >&#10094;</a>
+            <a class="next" onclick="plusSlides(1)" style="margin-right: 75px">&#10095;</a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Investment Calculator</p>
+    </footer>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
+        }
+    </script>
 
 </body>
 
