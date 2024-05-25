@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us</title>
+<link rel="stylesheet" href="my.css">
+</head>
+
+
+<body>
+    <header>
+        <h1>Investment Calculator</h1>
+        <nav>
+            <ul>
+                <li><a href="HtmlPage1.html"> Home </a></li>
+                <li><a href="about us.html"> About Us</a></li>   
+                <li><a href="calculatorPage1.html"> Investment Calculator</a></li>
+                
+</ul>
+</nav>
+
+
+</header>
+<div class="content">
+
+<h2> About us</h2>
+
+<p>Welcome to Investment Calculator, a pioneering platform dedicated to empowering young investors through innovative financial tools and insightful educational resources. Our mission is to simplify the complex world of investing, making it accessible and understandable for everyone, regardless of their background or experience level.</p>
+<p>Founded by a team of passionate financial experts and technologists, Investment Calculator is committed to providing up-to-date, accurate, and actionable information to help you navigate the often intimidating landscape of stocks, bonds, and other investment opportunities. Whether you are a beginner looking to make your first investment or an experienced investor seeking to optimize your portfolio, our tools are designed to assist you in making informed decisions that align with your financial goals.</p>
+<p>At Investment Calculator, we believe that a well-informed investor is an empowered investor. That's why we focus on delivering comprehensive market analysis, real-time data, and predictive analytics tools that can provide you with a competitive edge in the market. Our platform includes features such as a customizable investment calculator, detailed investment guides, and interactive learning modules, all designed with the user experience in mind.</p>
+<p>Our commitment extends beyond just providing tools and data. We strive to cultivate a community of like-minded individuals who are eager to learn, share, and grow together. Through our regularly updated blog, live webinars, and interactive forums, members can stay connected with the latest trends, gain insights from industry experts, and share their own experiences and strategies with peers.</p>
+<p>We are more than just a company; we are a movement towards democratizing financial information and investing capabilities. Join us on this journey to financial empowerment. Discover how Investment Calculator can help you unlock your investing potential and build a stronger financial future.</p>
+
+
+<div class="slideshow-container">
+    <div class="mySlides">
+        <img src="https://s0.rbk.ru/v6_top_pics/ampresize/media/img/8/02/756128637886028.jpg"
+        style="width:100%">
+        <div class="mySlides">
+            <img src="https://s0.rbk.ru/v6_top_pics/media/img/5/76/756673864254765.jpg" style="width:100%">
+        </div>
+        <div class="mySlides">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn84uTiwiQmxpKravxlAQikIuMHvrvCW3b4w&s" style="width:100%">
+    </div>
+     
+    <a class="prev" onclick="plusSlides(-1)" style="margin-left: -550px" >&#10094;</a>
+            <a class="next" onclick="plusSlides(1)" style="margin-right: 75px">&#10095;</a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Investment Calculator</p>
+    </footer>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>
